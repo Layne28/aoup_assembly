@@ -1,0 +1,31 @@
+#System
+phi = 0.60
+dim = 2
+Lx = 100.0
+Ly = 100.0
+is_p_x = 1
+is_p_y = 1
+particle_protocol = lattice
+sigma = 1.0
+epsilon = 1.0
+kT = 0.3
+tau = 10.00
+D0 = 1.0000
+do_cell_list = 1
+do_neighbor_grid = 0
+
+#Solver
+dt = 0.00025
+gamma = 1.0
+
+#Observer
+output_dir = /work/laynefrechette/aoup-assembly-results/kT=0.3/phi=0.60/D0=1.0000/tau=10.00/Lx=100.0_Ly=100.0
+particles_freq = 800
+thermo_freq = 800
+
+#LabBench
+experiment = standard
+equil_steps = 40000
+production_steps = 4000000
+info_freq = 8000
+
