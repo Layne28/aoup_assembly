@@ -13,6 +13,8 @@ class AOUPSolver : Solver
 {
 public:
 
+    double force_thresh = 200.0;
+
     /*** Methods ***/
 
     //constructor (needs to take System, unlike Solver)
@@ -23,7 +25,10 @@ public:
 
     //Take a step forward in time
     void update(System &theSys);
+    void update_adaptive(System &theSys, double deet, int level);
 
+    std::vector<arma::vec> get_thermal_forces(System &theSys, double deet);
+    std::vector<arma::vec> get_active_forces(System &theSys, double deet);
 };
 
 #endif

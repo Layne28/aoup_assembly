@@ -19,7 +19,7 @@ dt = 0.00025
 gamma = 1.0
 
 #Observer
-output_dir = /work/laynefrechette/aoup-assembly-results/kT=0.5/phi=0.60/D0=1.0000/tau=0.30/Lx=100.0_Ly=100.0
+output_dir = /scratch0/laynefrechette/aoup-assembly-results/kT=0.5/phi=0.60/D0=1.0000/tau=0.30/Lx=100.0_Ly=100.0
 particles_freq = 800
 thermo_freq = 800
 
