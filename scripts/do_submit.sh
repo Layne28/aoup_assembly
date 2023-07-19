@@ -3,10 +3,13 @@
 Lx=$1
 Ly=$2
 D0=$3
-nseed=$4
+potential_type=$4
+nseed=$5
 
-taus=(0.03 0.10 0.30 1.00 3.00 10.00)
-phis=(0.20 0.40 0.60)
+#taus=(0.03 0.10 0.30 1.00 3.00 10.00)
+taus=(0.03 0.30 1.00 3.00 10.00)
+#phis=(0.20 0.40 0.60)
+phis=(0.40)
 kTs=(0.0 0.1 0.3 0.5 1.0)
 D0s=(${D0})
 #D0s=(0.0000 0.0009 0.0010 0.0090 1.0000)
@@ -23,7 +26,7 @@ do
                 for (( i=1; i<=$nseed; i++ ))
                 do
                     echo $i
-                    sbatch -J "aoup_assembly_kT=${kT}_phi=${phi}_D0=${D0}_tau=${tau}_Lx=${Lx}_Ly=${Ly}_seed=${i}" -o "log/aoup_assembly_kT=${kT}_phi=${phi}_D0=${D0}_tau=${tau}_Lx=${Lx}_Ly=${Ly}_seed=${i}.o%j" -e "log/aoup_assembly_kT=${kT}_phi=${phi}_D0=${D0}_tau=${tau}_Lx=${Lx}_Ly=${Ly}_seed=${i}.e%j" scripts/submit_sims.sh "/home/laynefrechette/aoup_assembly/input_files/aoup_assembly_kT=${kT}_phi=${phi}_D0=${D0}_tau=${tau}_Lx=${Lx}_Ly=${Ly}.in" $i $input
+                    sbatch -J "${potential_type}_aoup_assembly_kT=${kT}_phi=${phi}_D0=${D0}_tau=${tau}_Lx=${Lx}_Ly=${Ly}_seed=${i}" -o "log/${potential_type}_aoup_assembly_kT=${kT}_phi=${phi}_D0=${D0}_tau=${tau}_Lx=${Lx}_Ly=${Ly}_seed=${i}.o%j" -e "log/${potential_type}_aoup_assembly_kT=${kT}_phi=${phi}_D0=${D0}_tau=${tau}_Lx=${Lx}_Ly=${Ly}_seed=${i}.e%j" scripts/submit_sims.sh "/home/laynefrechette/aoup_assembly/input_files/${potential_type}_aoup_assembly_kT=${kT}_phi=${phi}_D0=${D0}_tau=${tau}_Lx=${Lx}_Ly=${Ly}.in" $i $input
                 done
             done
         done

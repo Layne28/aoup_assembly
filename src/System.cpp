@@ -122,6 +122,7 @@ void System::do_paramdict_assign(ParamDict &theParams) {
     if(theParams.is_key("phi")) phi = std::stod(theParams.get_value("phi"));
     if(theParams.is_key("dt")) dt = std::stod(theParams.get_value("dt"));
     if(theParams.is_key("particle_protocol")) particle_protocol = theParams.get_value("particle_protocol");
+    if(theParams.is_key("potential_type")) potential_type = theParams.get_value("potential_type");
     if(theParams.is_key("epsilon")) epsilon = std::stod(theParams.get_value("epsilon"));
     if(theParams.is_key("sigma")) sigma = std::stod(theParams.get_value("sigma"));
     if(theParams.is_key("rcut")) rcut = std::stod(theParams.get_value("rcut"));

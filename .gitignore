@@ -1,3 +1,4 @@
 log/*
 *.in
 input_files/*.in
+seeds/*

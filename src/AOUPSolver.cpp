@@ -55,8 +55,8 @@ void AOUPSolver::update_adaptive(System &theSys, double deet, int level){
         incr[i] = v;
     }
     for(int i=0; i<theSys.N; i++){
-        incr[i] = potential_forces[i]/gamma*dt 
-                    + active_forces[i]
+        incr[i] = potential_forces[i]/gamma*deet 
+                    + active_forces[i]/gamma*deet
                     + thermal_forces[i];   
     }
 
@@ -143,7 +143,7 @@ std::vector<arma::vec> AOUPSolver::get_active_forces(System &theSys, double deet
 
     for (int i=0; i<theSys.N; i++) {
         for (int k=0; k<theSys.dim; k++) {
-            active_forces[i][k] = theSys.particles[i].self_prop_vel[k]/gamma*deet;
+            active_forces[i][k] = theSys.particles[i].self_prop_vel[k];
         }
     }
 

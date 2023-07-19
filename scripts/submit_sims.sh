@@ -12,7 +12,7 @@ in_file=$1
 seed=$2
 seed_file=$3
 
-echo "Running assembly simulation with input file: $in_file"
+echo "Running assembly simulation with input file: $in_file and seed file: $seed_file"
 
 run_dir="/home/laynefrechette/aoup_assembly/bin/"
 

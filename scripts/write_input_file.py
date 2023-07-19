@@ -16,6 +16,7 @@ def main():
     parser.add_argument('--is_p_x', default='1')
     parser.add_argument('--is_p_y', default='1')
     parser.add_argument('--particle_protocol', default='random')
+    parser.add_argument('--potential_type', default='lj')
     parser.add_argument('--sigma', default='1.0')
     parser.add_argument('--epsilon', default='1.0')
     parser.add_argument('--kT', default='0.0')
@@ -49,7 +50,7 @@ def main():
         print('Directory exists')
 
     print('Writing input file...')
-    with open(args.indir + '/aoup_assembly_kT=%.01f_phi=%.02f_D0=%.04f_tau=%.02f_Lx=%.01f_Ly=%.01f.in' % (float(args.kT), float(args.phi), float(args.D0),float(args.tau),float(args.Lx),float(args.Ly)), 'w') as f:
+    with open(args.indir + '/%s_aoup_assembly_kT=%.01f_phi=%.02f_D0=%.04f_tau=%.02f_Lx=%.01f_Ly=%.01f.in' % (args.potential_type, float(args.kT), float(args.phi), float(args.D0),float(args.tau),float(args.Lx),float(args.Ly)), 'w') as f:
 
         f.write('#System\n')
         f.write('phi = %s\n' % args.phi)
@@ -59,6 +60,7 @@ def main():
         f.write('is_p_x = %s\n' % args.is_p_x)
         f.write('is_p_y = %s\n' % args.is_p_y)
         f.write('particle_protocol = %s\n' % args.particle_protocol)
+        f.write('potential_type = %s\n' % args.potential_type)
         f.write('sigma = %s\n' % args.sigma)
         f.write('epsilon = %s\n' % args.epsilon)
         f.write('kT = %s\n' % args.kT)
